@@ -27,12 +27,13 @@ Or install it yourself with `gem install percy-capybara`.
 
 ## Setup
 
-Test suites need to call `Percy::Capybara.initialize_build` before running and
-`Percy::Capybara.finalize_build` when finished (even if your tests fail).
+Test suites need to call two hooks:
+
+* `Percy::Capybara.initialize_build` before running the test suite.
+* `Percy::Capybara.finalize_build` after the test suite is finished, even if tests fail.
 
 <div class="Alert Alert--warning">
-  <strong>NOTE:</strong> If your builds get stuck <i>"Receiving..."</i>, check this configuration
-  first.
+  <strong>NOTE:</strong> If your builds get stuck <i>"Receiving..."</i>, check this configuration first.
 </div>
 
 ### RSpec
@@ -71,6 +72,12 @@ Now the fun part!
 You can integrate with Percy by adding one line to your existing feature specs:
 
 ```ruby
+Percy::Capybara.snapshot(page, name: 'homepage with dropdown')
+```
+
+For example:
+
+```ruby
 describe 'a feature', type: :feature, js: true do
   it 'shows the dropdown menu when clicked' do
     visit '/'
@@ -82,9 +89,15 @@ describe 'a feature', type: :feature, js: true do
 end
 ```
 
-The `name: 'homepage with dropdown'` argument is not required, but it is helpful to identify the page by more than just its URL. If you are snapshotting a page multiple times with the same URL, `name` must be set. See _Identifying snapshots_ below.
+Done! Now push your branch to run your tests in your CI service.
 
-Done! A new Percy build will be created the next time you run your tests in a supported CI service, or it can be triggered locally.
+You can also trigger a build locally for setup or testing, see below.
+
+<div class="Alert Alert--info">
+  Best practices for Capybara and writing feature specs are outside the scope of these docs. See the <a href="https://github.com/jnicklas/capybara#using-capybara-with-rspec">Capybara docs</a> for more Capybara usage examples.
+</div>
+
+The `name: 'homepage with dropdown'` argument is not required, but it is helpful to identify the page by more than just its URL. If you are snapshotting a page multiple times with the same URL, `name` must be set. See _Identifying snapshots_ below.
 
 ### Local dev environments
 
@@ -95,14 +108,14 @@ and  temporarily setting the `PERCY_TOKEN` environment variable locally:
 
 ```bash
 $ export PERCY_ENABLE=1  # Required only in local dev environments.
-$ export PERCY_TOKEN=1234abcd1234abcd
+$ export PERCY_TOKEN=aaabbbcccdddeeefff
 $ bundle exec rspec
 ```
 
 Or in one line:
 
 ```bash
-$ PERCY_ENABLE=1 PERCY_TOKEN=1234abcd1234abcd bundle exec rspec
+$ PERCY_ENABLE=1 PERCY_TOKEN=aaabbbcccdddeeefff bundle exec rspec
 ```
 
 Careful though—if you run this in your local `master` branch, Percy cannot tell the difference between your local environment and your CI environment, so this will set the repo's `master` state in Percy. You can avoid this by simply checking out a different branch, or setting the `PERCY_BRANCH` environment variable.
@@ -110,7 +123,17 @@ Careful though—if you run this in your local `master` branch, Percy cannot tel
 
 ### Responsive visual diffs
 
-(WRITEME)
+In your `spec_helper.rb`, simply set the default widths for all snapshots:
+
+```ruby
+Percy.config.default_widths = [375, 1280]
+```
+
+Or, you can override widths for a single snapshot:
+
+```ruby
+Percy::Capybara.snapshot(page, name: 'homepage', widths: [375, 1280])
+```
 
 ### Identifying snapshots
 
@@ -139,6 +162,10 @@ Percy then handles all the complexities of rendering the page in a modern browse
 This asset-centric architecture keeps the impact on your tests minimal—in most cases, the overhead for each snapshot in your tests is only a few milliseconds. Assets are also fingerprinted when uploaded, so they are only uploaded once.
 
 ## Troubleshooting
+
+### Debug mode
+
+Run with the `PERCY_DEBUG=1` environment variable.
 
 ### WebMock/VCR users
 
