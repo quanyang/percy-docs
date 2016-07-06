@@ -19,3 +19,4 @@ Select your CI service to get started:
 ## Learn
 
 * [FAQ](/docs/learn/faq)
+* [GitHub integration](/docs/learn/github-integration)

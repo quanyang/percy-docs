@@ -56,7 +56,8 @@ setup done in private repositories in `before(:suite)` hooks.
 For example, with MiniTest you can add this to your `test_helper.rb`:
 
 ```ruby
-Percy::Capybara.initialize_build MiniTest.after_run { Percy::Capybara.finalize_build }
+Percy::Capybara.initialize_build
+MiniTest.after_run { Percy::Capybara.finalize_build }
 ```
 
 ### Non-Rails frameworks (Sinatra, etc.)
