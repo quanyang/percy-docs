@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import markdownFiles from 'percy-docs/markdownFiles';
+import percyDocs from 'percy-docs';
 
 export default Ember.Route.extend({
   model(params) {
-    return Ember.get(markdownFiles, params.path.replace(/\//g, '.')) || null;
+    return Ember.get(percyDocs.markdownFiles, params.path.replace(/\//g, '.')) || null;
   }
 });

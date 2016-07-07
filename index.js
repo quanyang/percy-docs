@@ -7,6 +7,36 @@ var Funnel = require('broccoli-funnel');
 var mergeTrees = require('broccoli-merge-trees');
 var path = require('path');
 
+var deepGet = function(obj, path){
+  for (var i = 0, path = path.split('/'), len=path.length; i<len; i++) {
+    obj = obj[path[i]];
+  };
+  return obj;
+};
+
+// Build-time transformations of the markdown files.
+function recursivePreprocess(obj, _rootObj) {
+  _rootObj = _rootObj || obj;
+  Object.keys(obj).forEach(function(key) {
+    var value = obj[key];
+    if (typeof(value) === 'string') {
+      // Base case: have a file string.
+      var includeRegex = /\[!INCLUDE \/docs\/(.*)?\]/g;
+      var match;
+      var newValue = value;
+      // For every !INCLUDE, replace it. Partials shouldn't include anything themselves.
+      while (match = includeRegex.exec(value)) {
+        var otherFileContents = deepGet(_rootObj, match[1]);
+        newValue = newValue.replace(match[0], otherFileContents);
+      }
+      obj[key] = newValue;
+    } else {
+      // Recursive case: have a nested object.
+      recursivePreprocess(value, _rootObj);
+    }
+  })
+}
+
 module.exports = {
   name: 'percy-docs',
   isDevelopingAddon: function() {
@@ -21,7 +51,10 @@ module.exports = {
     });
     var mdFlattened = flatiron(mdFunnel, {
       outputFile: 'markdownFiles.js',
-      trimExtensions: true
+      trimExtensions: true,
+      afterBuild: function(obj) {
+        recursivePreprocess(obj);
+      }
     });
     tree = mergeTrees([tree, mdFlattened]);
 

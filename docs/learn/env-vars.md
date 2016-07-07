@@ -4,7 +4,7 @@
 
 For authentication, Percy requires the following environment variables to be set:
 
-* `PERCY_TOKEN`: The Percy repo write-only API token. This is different for each Percy repository.
+* `PERCY_TOKEN`: The Percy repo write-only API token. This is unique for each Percy repository.
 * `PERCY_PROJECT`: The full repository slug, for example `my-org/repo-name`.
 
 <div class="Alert Alert--warning">

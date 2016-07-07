@@ -45,37 +45,6 @@ With Mocha tests, you can use `this.test.fullTitle()` to autogenerate the name a
 percySnapshot(this.test.fullTitle());  // Uses test name "Acceptance: Marketing pages can visit /about"
 ```
 
-### Responsive visual diffs (optional)
-
-You can use Percy [responsive visual diffs](/docs/learn/responsive) to test at different CSS breakpoints.
-
-In your app's `config/environment.js`:
-
-```javascript
-if (environment === 'test') {
-  // ...
-  ENV.percy = {
-    breakpointsConfig: {
-      mobile: 375,
-      tablet: 768,
-      desktop: 1280
-    },
-    defaultBreakpoints: ['mobile', 'desktop']
-  }
-}
-```
-
-With the above configuration, all snapshots will render at both the `mobile` and `desktop`
-breakpoints by default.
-
-You can override this on a per-snapshot basis by passing the `breakpoints` option to `percySnapshot()`.
-For example:
-
-```javascript
-// Desktop-only snapshot:
-percySnapshot('meter bar full', {breakpoints: ['desktop']});
-```
-
 ### Acceptance test example
 
 Make sure you have completed the [Installation](#installation) steps above.
@@ -114,6 +83,37 @@ describeComponent(
     });
   }
 );
+```
+
+## Responsive visual diff setup
+
+You can use Percy [responsive visual diffs](/docs/learn/responsive) to test at different CSS breakpoints.
+
+In your app's `config/environment.js`:
+
+```javascript
+if (environment === 'test') {
+  // ...
+  ENV.percy = {
+    breakpointsConfig: {
+      mobile: 375,
+      tablet: 768,
+      desktop: 1280
+    },
+    defaultBreakpoints: ['mobile', 'desktop']
+  }
+}
+```
+
+With the above configuration, all snapshots will render at both the `mobile` and `desktop`
+breakpoints by default.
+
+You can override this on a per-snapshot basis by passing the `breakpoints` option to `percySnapshot()`.
+For example:
+
+```javascript
+// Desktop-only snapshot:
+percySnapshot('meter bar full', {breakpoints: ['desktop']});
 ```
 
 ## Troubleshooting

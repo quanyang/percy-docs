@@ -1,5 +1,5 @@
 # percy-docs
 
-Docs for [Percy](https://percy.io).
+Source for https://percy.io/docs.
 
-(work in progress, docs are being moved into this repo)
+All docs are Markdown files in the `/docs` folder.
