@@ -8,14 +8,11 @@
 * [Codeship](/docs/setup/codeship)
 * [Drone](/docs/setup/drone)
 * [Semaphore](/docs/setup/semaphore)
-* [Other](/docs/setup/other)
+* [Local development](/docs/setup/local)
 
 # Clients
 
-* [Ruby - Capybara](/docs/clients/ruby/capybara)
-* [Ruby - CLI](/docs/clients/ruby/cli)
-* [JavaScript - Ember](/docs/clients/javascript/ember)
-* [Python - Selenium](/docs/clients/python/selenium)
+[!INCLUDE /docs/-client-list]
 
 # Learn
 

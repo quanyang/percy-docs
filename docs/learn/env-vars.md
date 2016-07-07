@@ -25,25 +25,4 @@ Percy client libraries pull other information from the environment they are runn
 
 ## Setting environment variables
 
-### CI environment
-
-See the **Setup** guides for how to set environment variables in your CI service.
-
-### Local development
-
-You can set environment variables locally using `export`:
-
-```bash
-$ export PERCY_TOKEN=aaabbbcccdddeeefff
-$ export PERCY_PROJECT=my-org/repo-name
-$ # Now run your tests locally:
-$ bundle exec rspec
-```
-
-Or on one line:
-
-```bash
-$ PERCY_ENABLE=1 PERCY_TOKEN=aaabbbcccdddeeefff bundle exec rspec
-```
-
-Careful though—if you run your tests locally on your `master` branch, Percy cannot tell the difference between your local environment and your CI environment, so this will set your repo's `master` state in Percy. You can avoid this by simply checking out a different branch, or setting the `PERCY_BRANCH` environment variable.
+See the **Setup** guides for how to set environment variables in your CI service or in local development environments.

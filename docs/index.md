@@ -19,10 +19,7 @@ Select your CI service to get started:
 
 ## Clients
 
-* [Ruby - Capybara](/docs/clients/ruby/capybara)
-* [Ruby - CLI](/docs/clients/ruby/cli)
-* [JavaScript - Ember](/docs/clients/javascript/ember)
-* [Python - Selenium](/docs/clients/python/selenium)
+[!INCLUDE /docs/-client-list]
 
 In minutes, you will have Percy's visual reviews integrated in your application:
 

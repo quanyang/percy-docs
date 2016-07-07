@@ -39,9 +39,11 @@ $ PERCY_TOKEN=aaabbbcccdddeeefff percy snapshot _site/
 ```
 
 <div class="Alert Alert--warning">
-  <strong>IMPORTANT: Keep your Percy token secret.</strong> Anyone with access to your token can consume your account quota. They will not be able to read data because the token is write-only.
 
-  See the <strong>Setup</strong> guides for how to securely set environment variables in your CI service.
+**IMPORTANT: Keep your Percy token secret.** Anyone with access to your token can consume your account quota, though they cannot read data.
+
+See the **Setup** guides for how to securely set environment variables in your CI service.
+
 </div>
 
 ## Usage
