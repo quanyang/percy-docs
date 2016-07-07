@@ -31,6 +31,5 @@ Make sure the Travis _"Display value in build log"_ toggle is off.
 
 A slightly more complicated way to set secret environment variables in Travis is to encrypt them and store them in your `.travis.yml`. See the [Travis: Encrypted Variables](https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables) docs for more info.
 
-
 [!INCLUDE /docs/setup/-next-step-clients]
 [!INCLUDE /docs/-client-list]

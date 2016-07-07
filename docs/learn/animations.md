@@ -1,8 +1,6 @@
-# Animation handling
+# Animations
 
-A big challenge of visual regression testing is avoiding false-positive visual diffs.
-
-False-positives can be caused by many variables (including system and hardware differences between browser environments), but are commonly caused by page animations.
+A big challenge of visual regression testing is **avoiding false-positive visual diffs**. False-positives can be caused by many variables (including system and hardware differences between browser environments), but are commonly caused by page animations.
 
 For example, take this awesome pure-CSS animation:
 
@@ -25,7 +23,7 @@ Percy does a lot of work behind the scenes to make sure that pages are rendered 
 
 ![](/images/examples/animation-no-diffs.jpg)
 
-Much better!
+Much better. **Percy automatically freezes CSS animations and animated GIFs.**
 
 Other than animations, Percy does other server-side tricks to create a consistent rendering environment and avoid other kinds of false-positives (such as font rendering differences, sub-pixel antialiasing, width and height changes, etc.)
 
