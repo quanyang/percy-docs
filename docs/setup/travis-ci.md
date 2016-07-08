@@ -2,28 +2,27 @@
 
 [!INCLUDE /docs/setup/-preamble]
 
-## Travis UI setup
+## Travis repo settings
 
 Travis CI provides an easy way to set environment variables in settings for a repository:
 
 https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings
 
-<div style="border: 1px solid #ddd; max-width: 600px; margin-bottom: 1em">
+In your Travis repository go to **Settings > Environment Variables**. Then:
+
+[!INCLUDE /docs/setup/-env-vars-setup-list]
+
+<div style="border: 1px solid #ddd; max-width: 800px; margin-bottom: 1em">
 
 ![](https://cloud.githubusercontent.com/assets/75300/16663836/893a5a88-4432-11e6-84cd-30fe98255fa3.png)
 
 </div>
 
-In your Travis repository go to **Settings > Environment Variables**. Then:
-
-1. Set `PERCY_TOKEN` to the token from Percy. This can be found in the settings for each repo in Percy.
-1. Set `PERCY_PROJECT` to the full name of your repository. For example: `my-org/repo-name`.
-
 <div class="Alert Alert--warning">
 
 **IMPORTANT: Keep your Percy token secret.** Anyone with access to your token can consume your account quota, though they cannot read data.
 
-Make sure the Travis _"Display value in build log"_ toggle is off.
+For Travis CI, make sure the _"Display value in build log"_ toggle is off.
 
 </div>
 

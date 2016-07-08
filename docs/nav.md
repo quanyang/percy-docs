@@ -4,10 +4,10 @@
 
 * [Travis CI](/docs/setup/travis-ci)
 * [Circle CI](/docs/setup/circle-ci)
-* [Jenkins](/docs/setup/jenkins)
+* [Semaphore](/docs/setup/semaphore)
 * [Codeship](/docs/setup/codeship)
 * [Drone](/docs/setup/drone)
-* [Semaphore](/docs/setup/semaphore)
+* [Jenkins](/docs/setup/jenkins)
 * [Local development](/docs/setup/local)
 
 # Clients
@@ -28,4 +28,4 @@
 
 * [Ruby API client](/docs/api/ruby-client)
 * [JavaScript API client](/docs/api/javascript-client)
-* [Reference](/docs/api)
+* [Reference](/docs/api/reference)

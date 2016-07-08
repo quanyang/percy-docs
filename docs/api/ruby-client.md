@@ -3,11 +3,13 @@
 [![](https://travis-ci.org/percy/percy-client.svg?branch=master)](https://travis-ci.org/percy/percy-client)
 [![](https://badge.fury.io/rb/percy-client.svg)](https://rubygems.org/gems/percy-client)
 
-<div class="Alert Alert--warning">
-  <strong>NOTE:</strong> This is the low-level Percy API client—you probably want to use the <a href="/docs/clients/ruby/capybara">Capybara client</a>.
-</div>
+Ruby API client library for [Percy](https://percy.io).
 
-Percy::Client is a simple Ruby client and wrapper library for the Percy API, which can be used to integrate Percy's screenshot rendering and visual testing into custom environments and services.
+<div class="Alert Alert--warning">
+
+**NOTE:** This is the low-level Percy API client—you probably want to use the [Capybara client](/docs/clients/ruby/capybara) or the Ruby [command-line interface](/docs/clients/ruby/cli) instead.
+
+</div>
 
 ## Installation
 

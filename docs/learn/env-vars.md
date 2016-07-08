@@ -8,9 +8,11 @@ For authentication, Percy requires the following environment variables to be set
 * `PERCY_PROJECT`: The full repository slug, for example `my-org/repo-name`.
 
 <div class="Alert Alert--warning">
-  <strong>IMPORTANT: Keep your Percy token secret.</strong> Anyone with access to your token can consume your account quota. They will not be able to read data because the token is write-only.
 
-  See the <strong>Setup</strong> guides for how to securely set environment variables in your CI service.
+**IMPORTANT: Keep your Percy token secret.** Anyone with access to your token can consume your account quota. They will not be able to read data because the token is write-only.
+
+See the **Setup** guides for how to securely set environment variables in your CI service.
+
 </div>
 
 ### Optional
@@ -21,7 +23,6 @@ Percy client libraries pull other information from the environment they are runn
 * `PERCY_TARGET_BRANCH`: The branch to compare against. Defaults to `master`.
 * `PERCY_COMMIT`: The commit SHA to associate to the build.
 * `PERCY_PULL_REQUEST`: The pull request number to associate to the build, if any.
-
 
 ## Setting environment variables
 

@@ -1,6 +1,8 @@
 # Setup: local development
 
-Percy is designed to integrate with your tests while running in CI, but it can also work in local development environments for testing purposes. To enable Percy, these environment variables must be set:
+Percy is designed to integrate with your tests while running in CI, but it can also work in local development environments for testing purposes.
+<br>
+**To enable Percy, these environment variables must be set in your environment**:
 
 * `PERCY_TOKEN`: The Percy repo write-only API token. This is unique for each Percy repository.
 * `PERCY_PROJECT`: The full repository slug, for example `my-org/repo-name`.
