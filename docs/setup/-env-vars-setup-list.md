@@ -1,2 +1,2 @@
-1. Set `PERCY_TOKEN` to the token from your Percy repo. This can be found in the settings for each repo in Percy.
-1. Set `PERCY_PROJECT` to the full name of your repository. For example: `PERCY_PROJECT=my-org/repo-name`.
+1. **Set `PERCY_TOKEN` to the write-only token from your Percy repo.** This token can be found in each Percy repo's settings.
+1. **Set `PERCY_PROJECT` to the full name of your repository.** For example: `PERCY_PROJECT=my-org/repo-name`.

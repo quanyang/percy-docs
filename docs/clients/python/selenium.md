@@ -3,9 +3,13 @@
 [![Package Status](https://img.shields.io/pypi/v/percy.svg)](https://pypi.python.org/pypi/percy)
 [![Build Status](https://travis-ci.org/percy/python-percy-client.svg?branch=master)](https://travis-ci.org/percy/python-percy-client)
 
-Python client library for visual regression testing with [Percy](https://percy.io).
+Python client library for visual regression testing with [Percy](https://percy.io) and Selenium tests.
+
+This library is in **beta**—we welcome contributions to improve it.
 
 ## Installation
+
+[!INCLUDE /docs/clients/-do-setup-first]
 
 Requires Python >= 2.7.
 
@@ -13,17 +17,12 @@ Requires Python >= 2.7.
 $ pip install percy
 ```
 
-Also:
-
-1. Set the `PERCY_TOKEN` environment variables in your CI settings.
-1. Set the `PERCY_PROJECT=org/repo-name` environment variables in your CI settings.
-
-## Usage
+## Setup
 
 The following assumes that `webdriver` is a Selenium webdriver object of some sort
 (like `webdriver.Chrome()`). Proper setup and teardown of Selenium tests is not included here.
 
-First, initialize the build. This must be done at the beginning of the entire test suite.
+First, create a `ResourceLoader` object. This is the configuration for how Percy will discover your app's assets.
 
 ```python
 import percy
@@ -33,16 +32,28 @@ root_static_dir = os.path.join(os.path.dirname(__file__), 'static')
 loader = percy.ResourceLoader(
   root_dir=root_static_dir,
   # Prepend `/assets` to all of the files in the static directory, to match production assets.
+  # This is only needed if your static assets are served from a nested directory.
   base_url='/assets',
   webdriver=webdriver,
 )
-percy_runner = percy.Runner(loader=loader)
+```
 
+Now, create a `percy.Runner` object and initialize a build. This must be done at the beginning of your entire test suite.
+
+```python
+percy_runner = percy.Runner(loader=loader)
 percy_runner.initialize_build()
 ```
 
-Now, use `percy_runner.snapshot()` in any test to capture the DOM state and send it to Percy for
-rendering and visual regression testing.
+Then, at the end of your entire test suite, finalize the build (this needs to be run even if tests fail):
+
+```python
+percy_runner.finalize_build()
+```
+
+## Usage
+
+During Selenium tests, use `percy_runner.snapshot()` in any test to capture the DOM state and send it to Percy for rendering and visual regression testing.
 
 ```python
 # In a Selenium test, you might visit a page like this (this also assumes we're subclassing
@@ -58,11 +69,7 @@ percy_runner.snapshot()
 percy_runner.snapshot(name='homepage')
 ```
 
-Then, at the end of the test suite, finalize the build.
-
-```python
-percy_runner.finalize_build()
-```
+**Done!** Now commit and push your branch to run your tests in your CI service, or create a GitHub PR.
 
 ### Responsive testing
 
@@ -90,9 +97,4 @@ See [Percy usage in the Sentry repository](https://github.com/getsentry/sentry/s
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-Throw a ★ on it! :)
-
-### Running Tests
-
-* `make develop` (to install dependencies)
-* `make test` or `make tdd`
+[Throw a ★ on it!](https://github.com/percy/python-percy-client) :)

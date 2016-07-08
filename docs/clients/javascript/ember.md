@@ -7,15 +7,15 @@ Ember addon for visual regression testing with [Percy](https://percy.io).
 
 ## Installation
 
+[!INCLUDE /docs/clients/-do-setup-first]
+
 Requires Node >= 0.12.0.
 Requires `ember-cli` >= 1.13.13, preferably >= 2.4.0.
 
 1. `ember install ember-percy`
-1. Set the `PERCY_TOKEN` environment variables in your CI settings.
-1. Set the `PERCY_PROJECT=org/repo-name` environment variables in your CI settings.
 1. Register the percy test helpers for acceptance tests.
-    * For apps, add `import '../helpers/percy/register-helpers';` to `module-for-acceptance.js`.
-    * For addons, add `import 'dummy/tests/helpers/percy/register-helpers';` in `module-for-acceptance.js`.
+    * **For apps**, add `import '../helpers/percy/register-helpers';` to `module-for-acceptance.js`.
+    * **For addons**, add `import 'dummy/tests/helpers/percy/register-helpers';` in `module-for-acceptance.js`.
 1. Add `percySnapshot` to `tests/.jshintrc` in the `predef` section to avoid "percySnapshot is not defined" errors.
 
 ## Usage
@@ -47,13 +47,14 @@ percySnapshot(this.test.fullTitle());  // Uses test name "Acceptance: Marketing 
 
 ### Acceptance test example
 
-Make sure you have completed the [Installation](#installation) steps above.
-
 ```javascript
 describe('Acceptance: Marketing pages', function() {
   it('can visit /about', function() {
     visit('/about');
     percySnapshot('about page');
+
+    click('#person1');
+    percySnapshot('about page (person details)');
   });
 });
 ```
@@ -116,11 +117,19 @@ For example:
 percySnapshot('meter bar full', {breakpoints: ['desktop']});
 ```
 
+## GitHub integration
+
+Percy **automatically integrates with GitHub PRs**, so you can do visual reviews with each PR's code review.
+
+![](https://cloud.githubusercontent.com/assets/75300/13929974/13750b2c-ef5a-11e5-9a87-3ad3b335cc0d.png)
+
+See our [GitHub integration](/docs/learn/github-integration) docs for more info.
+
 ## Troubleshooting
 
 * **ember-cli-mirage users**:
-  * Mirage blocks network requests by default. You need to add `this.passthrough('/_percy/**');` to your mirage routes to whitelist Percy's internal requests that are made in tests. Add it to the *top of your mirage routes* to avoid being affected by namespaces.
-  * Also, `passthrough` requires jQuery > 2.x. If you are running Ember 2.3 or greater, simply remove the `jquery` line from your `bower.json` (Ember 2.3 and greater will pull in the correct jQuery version). Otherwise, you will need to upgrade your jQuery version if using Mirage.
+  * Mirage blocks network requests by default. You need to add `this.passthrough('/_percy/**');` to your mirage routes to whitelist Percy's internal requests that are made in tests. Make sure to add it to the **top** of your routes to avoid being affected by `this.namespace` changes.
+  * Also, Mirage's `passthrough` requires jQuery > 2.x. If you are running Ember 2.3 or greater, simply remove the `jquery` line from your `bower.json` (Ember 2.3 and greater will pull in the correct jQuery version). Otherwise, you will need to upgrade your jQuery version for Mirage.
 
 ## Contributing
 
@@ -130,10 +139,4 @@ percySnapshot('meter bar full', {breakpoints: ['desktop']});
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-Throw a ★ on it! :)
-
-### Running Tests
-
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+[Throw a ★ on it!](https://github.com/percy/ember-percy) :)

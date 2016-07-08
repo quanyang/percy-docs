@@ -4,7 +4,7 @@
 
 ## Jenkins build setup
 
-Depending on how you have Jenkins configured, there are a few options for adding Percy's environment variables.
+Depending on how you have Jenkins configured, there are a few options for configuring environment variables.
 
 You can use the [EnvInject plugin](https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin) to set these environment variables for a build:
 
@@ -24,7 +24,7 @@ bundle exec rspec
 
 **IMPORTANT: Keep your Percy token secret.** Anyone with access to your token can consume your account quota, though they cannot read data.
 
-If your code or CI builds are public, do not add the PERCY_TOKEN to your code.
+If your code is public, do not commit the PERCY_TOKEN to your code.
 
 </div>
 

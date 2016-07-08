@@ -23,7 +23,7 @@ build:
 
 **IMPORTANT: Keep your Percy token secret.** Anyone with access to your token can consume your account quota, though they cannot read data.
 
-If your code is public, do not add the PERCY_TOKEN to your code.
+If your code is public, do not commit the PERCY_TOKEN to your code.
 
 </div>
 

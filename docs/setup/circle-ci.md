@@ -4,11 +4,11 @@
 
 ## Circle project setup
 
-Circle CI provides an easy way to set environment variables in settings for a repository:
+Circle CI provides an easy way to set environment variables in project settings:
 
 https://circleci.com/docs/environment-variables/#setting-environment-variables-for-all-commands-without-adding-them-to-git
 
-In your Circle project go to **Project settings > Environment Variables**. Then:
+In your Circle project, go to **Project settings > Environment Variables**. Then:
 
 [!INCLUDE /docs/setup/-env-vars-setup-list]
 

@@ -3,13 +3,15 @@
 [![](https://travis-ci.org/percy/percy-capybara.svg?branch=master)](https://travis-ci.org/percy/percy-capybara)
 [![](https://badge.fury.io/rb/percy-capybara.svg)](https://rubygems.org/gems/percy-capybara)
 
-Percy::Capybara is a library for integrating Percy into your existing [Capybara](https://github.com/jnicklas/capybara) feature tests in any Ruby web framework—including Rails, Sinatra, etc.
+Percy::Capybara is a library for integrating Percy's visual regression testing into your existing [Capybara](https://github.com/jnicklas/capybara) feature tests in any Ruby web framework—including Rails, Sinatra, etc.
 
-If you've written feature tests (or "UI / acceptance / browser tests"), you know how hard it can be to get them right and to get your app in the correct UI state. Percy::Capybara lets you take all the time you've spent building your feature tests and expand them with screenshots and visual testing at every step of the way, to truly see what the browser sees.
+If you've written feature tests (or "UI tests", "acceptance tests", etc.), you know how hard it can be to get them right and to get your app in the correct UI state. Percy::Capybara lets you take all the time you've spent building your feature tests and expand them with screenshots and visual regression tests to cover all the visual changes in your app, even behind complex UI states.
 
 The examples below assume you are using RSpec, but they could be easily adapted for other testing frameworks.
 
 ## Installation
+
+[!INCLUDE /docs/clients/-do-setup-first]
 
 Add this line to your application's Gemfile:
 
@@ -33,7 +35,9 @@ Test suites need to call two hooks:
 * `Percy::Capybara.finalize_build` after the test suite is finished, even if tests fail.
 
 <div class="Alert Alert--warning">
-  <strong>NOTE:</strong> If your builds get stuck <i>"Receiving..."</i>, check this configuration first.
+
+**NOTE:** If your builds get stuck <i>"Receiving..."</i>, check this configuration first.
+
 </div>
 
 ### RSpec
@@ -48,9 +52,6 @@ RSpec.configure do |config|
   config.after(:suite) { Percy::Capybara.finalize_build }
 end
 ```
-
-Note that RSpec runs before hooks in order, so these lines must come after any Percy authentication
-setup done in private repositories in `before(:suite)` hooks.
 
 ### Other test frameworks (MiniTest, etc.)
 
@@ -89,39 +90,19 @@ describe 'a feature', type: :feature, js: true do
 end
 ```
 
-Done! Now push your branch to run your tests in your CI service.
-
-You can also trigger a build locally for setup or testing, see below.
+**Done!** Now commit and push your branch to run your tests in your CI service, or create a GitHub PR.
 
 <div class="Alert Alert--info">
-  Best practices for Capybara and writing feature specs are outside the scope of these docs. See the <a href="https://github.com/jnicklas/capybara#using-capybara-with-rspec">Capybara docs</a> for more Capybara usage examples.
+
+Best practices for Capybara and writing feature specs are outside the scope of these docs. See the [Capybara docs](https://github.com/jnicklas/capybara#using-capybara-with-rspec) for more Capybara usage examples.
+
 </div>
 
 The `name: 'homepage with dropdown'` argument is not required, but it is helpful to identify the page by more than just its URL. If you are snapshotting a page multiple times with the same URL, `name` must be set. See _Identifying snapshots_ below.
 
-### Local dev environments
-
-By default, Percy is disabled in local dev environments to avoid teams accidentally overriding each others' changes while developing feature specs. However, you may want to enable Percy locally while getting set up for the first time. Or, you may want to see visual diffs as you iterate on a design but before pushing the final changes for review.
-
-You can enable Percy for your local environment by setting the `PERCY_ENABLE` environment variable,
-and  temporarily setting the `PERCY_TOKEN` environment variable locally:
-
-```bash
-$ export PERCY_ENABLE=1  # Required only in local dev environments.
-$ export PERCY_TOKEN=aaabbbcccdddeeefff
-$ bundle exec rspec
-```
-
-Or in one line:
-
-```bash
-$ PERCY_ENABLE=1 PERCY_TOKEN=aaabbbcccdddeeefff bundle exec rspec
-```
-
-Careful though—if you run this in your local `master` branch, Percy cannot tell the difference between your local environment and your CI environment, so this will set the repo's `master` state in Percy. You can avoid this by simply checking out a different branch, or setting the `PERCY_BRANCH` environment variable.
-
-
 ### Responsive visual diffs
+
+You can use Percy [responsive visual diffs](/docs/learn/responsive) to test pages at different CSS breakpoints.
 
 In your `spec_helper.rb`, simply set the default widths for all snapshots:
 
@@ -129,11 +110,34 @@ In your `spec_helper.rb`, simply set the default widths for all snapshots:
 Percy.config.default_widths = [375, 1280]
 ```
 
-Or, you can override widths for a single snapshot:
+With the above configuration, all snapshots will render at both mobile and desktop breakpoints by default.
+
+You can also override widths per-snapshot:
 
 ```ruby
 Percy::Capybara.snapshot(page, name: 'homepage', widths: [375, 1280])
 ```
+
+### Local dev environments
+
+By default, Percy is disabled in local dev environments to avoid teams accidentally overriding each others' changes while developing feature specs. However, you may want to enable Percy locally while getting set up. See [Local development](/docs/setup/local) setup for more info.
+
+The `Percy::Capybara` client requires an additional environment variables of `PERCY_ENABLE=1` to be set in order to run locally. You can temporarily set all the environment vars to run locally:
+
+```bash
+$ export PERCY_ENABLE=1  # Required only for Percy::Capybara in local dev environments.
+$ export PERCY_TOKEN=aaabbbcccdddeeefff
+$ export PERCY_PROJECT=my-org/my-repo
+$ bundle exec rspec
+```
+
+Or in one line:
+
+```bash
+$ PERCY_ENABLE=1 PERCY_TOKEN=aaabbbcccdddeeefff PERCY_PROJECT=my-org/my-repo bundle exec rspec
+```
+
+Careful though—if you run this in your local `master` branch, Percy cannot tell the difference between your local environment and your CI environment, so this will set the repo's `master` state in Percy. You can avoid this by simply checking out a different branch, or setting the `PERCY_BRANCH` environment variable.
 
 ### Identifying snapshots
 
@@ -149,23 +153,13 @@ To manually identify a snapshot, you can provide the `name` parameter:
 Percy::Capybara.snapshot(page, name: 'homepage (with dropdown clicked)')
 ```
 
-The `name` param can be any string that makes sense to you to identify the page state, it should just be unique and remain the same across builds.
-
-It is **required** if you are snapshotting a page multiple times with the same URL.
-
-## How it works
-
-The actual page rendering and diffing, which often can be very slow and computationally expensive, does _not_ happen in your tests. Instead, the `snapshot` method grabs a the current DOM structure, CSS, and the page's assets and uploads them to Percy.
-
-Percy then handles all the complexities of rendering the page in a modern browser (Firefox 38 ESR), taking a screenshot, generating a pixel-by-pixel visual diff compared to the last successful master build, setting the status of the GitHub Pull Request, etc. This is performed in our custom, parallelized rendering infrastructure—built specifically to support processing and storing hundreds or thousands of snapshots at the same time, as fast as your team and app size may need.
-
-This asset-centric architecture keeps the impact on your tests minimal—in most cases, the overhead for each snapshot in your tests is only a few milliseconds. Assets are also fingerprinted when uploaded, so they are only uploaded once.
+The `name` param can be any string that makes sense to you to identify the page state, it should just be unique and remain the same across builds. It is **required** if you are snapshotting a page multiple times with the same URL.
 
 ## Troubleshooting
 
 ### Debug mode
 
-Run with the `PERCY_DEBUG=1` environment variable.
+Run with the `PERCY_DEBUG=1` environment variable to see what build resources and snapshots are being created for your build.
 
 ### WebMock/VCR users
 
@@ -203,6 +197,11 @@ There is no compelling reason to have debug assets permanently enabled in tests�
 
 *   [Percy::Capybara Reference](http://www.rubydoc.info/gems/percy-capybara/Percy/Capybara) on RubyDoc
 
+### RailsConf 2016 talk
+
+<iframe style="max-width: 1000px" width="100%" height="563" src="https://www.youtube-nocookie.com/embed/5h-JJ2wqiIw" frameborder="0" allowfullscreen></iframe>
+<br>
+
 ## Changelog
 
 *   [percy-capybara releases on GitHub](https://github.com/percy/percy-capybara/releases)
@@ -214,3 +213,5 @@ There is no compelling reason to have debug assets permanently enabled in tests�
 3.  Commit your changes (`git commit -am 'Add some feature'`)
 4.  Push to the branch (`git push origin my-new-feature`)
 5.  Create a new Pull Request
+
+[Throw a ★ on it!](https://github.com/percy/percy-capybara) :)
