@@ -1,0 +1,7 @@
+* [Travis CI](/docs/setup/travis-ci)
+* [CircleCI](/docs/setup/circleci)
+* [Semaphore](/docs/setup/semaphore)
+* [Codeship](/docs/setup/codeship)
+* [Drone](/docs/setup/drone)
+* [Jenkins](/docs/setup/jenkins)
+* [Local development](/docs/setup/local)

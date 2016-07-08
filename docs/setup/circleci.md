@@ -2,7 +2,7 @@
 
 [!INCLUDE /docs/setup/-preamble]
 
-## Circle project setup
+## CircleCI project setup
 
 CircleCI provides an easy way to set environment variables in project settings:
 

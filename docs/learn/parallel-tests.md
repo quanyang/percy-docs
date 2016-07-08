@@ -12,7 +12,7 @@ Depending on your CI service, you may need to do some simple configuration to su
 
 * **Automatically supported** when using the Percy client libraries:
 
-  * Circle CI parallelism ([docs](https://circleci.com/docs/setting-up-parallelism))
+  * CircleCI parallelism ([docs](https://circleci.com/docs/setting-up-parallelism))
   * Travis CI parallel builds ([docs](http://docs.travis-ci.com/user/speeding-up-the-build/#Parallelizing-your-builds-across-virtual-machines))
 
 * **Manual configuration:**

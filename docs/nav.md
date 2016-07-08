@@ -2,13 +2,7 @@
 
 # Setup
 
-* [Travis CI](/docs/setup/travis-ci)
-* [Circle CI](/docs/setup/circle-ci)
-* [Semaphore](/docs/setup/semaphore)
-* [Codeship](/docs/setup/codeship)
-* [Drone](/docs/setup/drone)
-* [Jenkins](/docs/setup/jenkins)
-* [Local development](/docs/setup/local)
+[!INCLUDE /docs/-ci-list]
 
 # Clients
 

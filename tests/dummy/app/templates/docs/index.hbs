@@ -1,5 +1,12 @@
-{{#if model}}
-  {{md-text text=model html=true typographer=true linkify=true}}
-{{else}}
-  Not Found.
-{{/if}}
+<div style="width: 25%; float: left">
+  {{#if model.navMarkdown}}
+    {{md-text text=model.navMarkdown html=true typographer=true linkify=true}}
+  {{/if}}
+</div>
+<div style="width: 75%; float: left">
+  {{#if model.pageMarkdown}}
+    {{md-text text=model.pageMarkdown html=true typographer=true linkify=true}}
+  {{else}}
+    Not Found.
+  {{/if}}
+</div>
