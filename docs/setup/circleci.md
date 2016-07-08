@@ -1,14 +1,14 @@
-# Setup: Circle CI
+# Setup: CircleCI
 
 [!INCLUDE /docs/setup/-preamble]
 
 ## Circle project setup
 
-Circle CI provides an easy way to set environment variables in project settings:
+CircleCI provides an easy way to set environment variables in project settings:
 
 https://circleci.com/docs/environment-variables/#setting-environment-variables-for-all-commands-without-adding-them-to-git
 
-In your Circle project, go to **Project settings > Environment Variables**. Then:
+In your CircleCI project, go to **Project settings > Environment Variables**. Then:
 
 [!INCLUDE /docs/setup/-env-vars-setup-list]
 
@@ -20,7 +20,7 @@ In your Circle project, go to **Project settings > Environment Variables**. Then
 
 ## Alternative circle.yml setup
 
-A different way is to add the environment variables to your `circle.yml`. See the [Circle CI config: Environment](https://circleci.com/docs/configuration/#environment) docs for more info.
+A different way is to add the environment variables to your `circle.yml`. See the [CircleCI config: Environment](https://circleci.com/docs/configuration/#environment) docs for more info.
 
 <div class="Alert Alert--warning">
 
