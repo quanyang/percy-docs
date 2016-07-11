@@ -68,4 +68,4 @@ To tell when a parallelized build is finished, we simply count the number of "fi
 
 With this mechanism, the client-side logic remains very simple and all the complexities of transactionality and coordination between nodes happens in our service.
 
-For more info, you can see the simple client-side logic for `parallel_nonce` and `parallel_total_shards` in the `[percy/client/environment.rb](https://github.com/percy/percy-client/blob/master/lib/percy/client/environment.rb)` file.
+For more info, you can see the simple client-side logic for `parallel_nonce` and `parallel_total_shards` in the Ruby [percy/client/environment.rb](https://github.com/percy/percy-client/blob/master/lib/percy/client/environment.rb) file.
