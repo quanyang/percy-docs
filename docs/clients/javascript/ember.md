@@ -133,7 +133,7 @@ See our [GitHub integration](/docs/learn/github-integration) docs for more info.
 
 ## Other resources
 
-* EmberScreencasts: [Introduction to Visual Regression Testing](https://www.emberscreencasts.com/posts/160)
+* EmberScreencasts video: [Introduction to Visual Regression Testing](https://www.emberscreencasts.com/posts/160)
 
 ## Contributing
 
