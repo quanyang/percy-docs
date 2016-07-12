@@ -131,6 +131,10 @@ See our [GitHub integration](/docs/learn/github-integration) docs for more info.
   * Mirage blocks network requests by default. You need to add `this.passthrough('/_percy/**');` to your mirage routes to whitelist Percy's internal requests that are made in tests. Make sure to add it to the **top** of your routes to avoid being affected by `this.namespace` changes.
   * Also, Mirage's `passthrough` requires jQuery > 2.x. If you are running Ember 2.3 or greater, simply remove the `jquery` line from your `bower.json` (Ember 2.3 and greater will pull in the correct jQuery version). Otherwise, you will need to upgrade your jQuery version for Mirage.
 
+## Other resources
+
+* EmberScreencasts: [Introduction to Visual Regression Testing](https://www.emberscreencasts.com/posts/160)
+
 ## Contributing
 
 1. Fork it ( https://github.com/percy/ember-percy/fork )
