@@ -21,6 +21,7 @@ Percy client libraries pull other information from the environment they are runn
 
 * `PERCY_BRANCH`: The branch the build is being run in. Defaults to the current git branch.
 * `PERCY_TARGET_BRANCH`: The branch to compare against. Defaults to `master`.
+  *  If the Percy build is associated to a GitHub Pull Request, setting this value have no effect and the target branch will be automatically determined from the GitHub PR.
 * `PERCY_COMMIT`: The commit SHA to associate to the build.
 * `PERCY_PULL_REQUEST`: The pull request number to associate to the build, if any.
 

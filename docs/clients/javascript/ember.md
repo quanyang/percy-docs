@@ -18,6 +18,16 @@ Requires `ember-cli` >= 1.13.13, preferably >= 2.4.0.
     * **For addons**, add `import 'dummy/tests/helpers/percy/register-helpers';` in `module-for-acceptance.js`.
 1. Add `percySnapshot` to `tests/.jshintrc` in the `predef` section to avoid "percySnapshot is not defined" errors.
 
+### ember-cli-mirage / pretender users
+
+By default, Mirage and Pretender block all network requests in tests. If you use these libraries you need to whitelist Percy's internal requests in tests:
+
+* **ember-cli-mirage users**:
+  * Add `this.passthrough('/_percy/**');` to the _top_ of `mirage/config.js`. It must be above any `this.namespace` calls.
+  * Also, Mirage's `this.passthrough` requires jQuery > 2.x. If you are running Ember 2.3 or greater, simply remove the `jquery` line from your `bower.json` (Ember 2.3 and greater will pull in the correct jQuery version for Ember). Otherwise, upgrade your jQuery version for Mirage.
+* **Pretender users**:
+  * Add `this.post('/_percy/:path', this.passthrough);` to your pretender routes.
+
 ## Usage
 
 ```javascript
@@ -124,15 +134,6 @@ Percy **automatically integrates with GitHub PRs**, so you can do visual reviews
 ![](https://cloud.githubusercontent.com/assets/75300/13929974/13750b2c-ef5a-11e5-9a87-3ad3b335cc0d.png)
 
 See our [GitHub integration](/docs/learn/github-integration) docs for more info.
-
-## Troubleshooting
-
-* **ember-cli-mirage users**:
-  * Mirage blocks network requests by default. You need to add `this.passthrough('/_percy/**');` to your mirage routes to whitelist Percy's internal requests that are made in tests. Make sure to add it to the **top** of your routes to avoid being affected by `this.namespace` changes.
-  * Also, Mirage's `passthrough` requires jQuery > 2.x. If you are running Ember 2.3 or greater, simply remove the `jquery` line from your `bower.json` (Ember 2.3 and greater will pull in the correct jQuery version). Otherwise, you will need to upgrade your jQuery version for Mirage.
-
-* **Pretender users**:
-  * Like Mirage, which uses Pretender under the hood, Pretender blocks network requests by default. A passthrough mechanism is also available but the syntax is slightly different. You can add `this.post('/_percy/:param', this.passthrough);` to your Pretender route handlers.
 
 ## Other resources
 
