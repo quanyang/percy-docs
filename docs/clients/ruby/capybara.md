@@ -186,6 +186,12 @@ If you use [WebMock](https://github.com/bblimke/webmock) to stub out HTTP connec
 WebMock.disable_net_connect!(allow: 'percy.io')
 ```
 
+If you still experience problems, and you are using a Webmock version older than 2.0.0, try adding `require: false` to the line in your Gemfile so that Webmock won't block the HTTP request in `initialize_build`:
+
+```ruby
+gem 'webmock', require: false
+```
+
 ### Turn off debug assets
 
 After upgrading to Sprockets 3, you may notice broken CSS in Percy builds. You likely have this option set in `test.rb`:
