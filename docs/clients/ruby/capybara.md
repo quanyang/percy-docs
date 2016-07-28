@@ -53,6 +53,15 @@ RSpec.configure do |config|
 end
 ```
 
+### Cucumber
+
+Add these lines to `features/support/percy.rb`:
+
+```ruby
+Percy::Capybara.initialize_build
+at_exit { Percy::Capybara.finalize_build }
+```
+
 ### Other test frameworks (MiniTest, etc.)
 
 For example, with MiniTest you can add this to your `test_helper.rb`:
