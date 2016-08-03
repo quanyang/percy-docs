@@ -53,6 +53,15 @@ RSpec.configure do |config|
 end
 ```
 
+### Cucumber
+
+Add these lines to `features/support/percy.rb`:
+
+```ruby
+Percy::Capybara.initialize_build
+at_exit { Percy::Capybara.finalize_build }
+```
+
 ### Other test frameworks (MiniTest, etc.)
 
 For example, with MiniTest you can add this to your `test_helper.rb`:
@@ -175,6 +184,12 @@ If you use [WebMock](https://github.com/bblimke/webmock) to stub out HTTP connec
 
 ```ruby
 WebMock.disable_net_connect!(allow: 'percy.io')
+```
+
+If you still experience problems, and you are using a Webmock version older than 2.0.0, try adding `require: false` to the line in your Gemfile so that Webmock won't block the HTTP request in `initialize_build`:
+
+```ruby
+gem 'webmock', require: false
 ```
 
 ### Turn off debug assets
