@@ -12,12 +12,7 @@ Percy is designed to integrate with your tests and CI environment. Getting Percy
 
 Select your CI service to get started:
 
-* [Travis CI](/docs/setup/travis-ci)
-* [CircleCI](/docs/setup/circleci)
-* [Jenkins](/docs/setup/jenkins)
-* [Codeship](/docs/setup/codeship)
-* [Drone](/docs/setup/drone)
-* [Semaphore](/docs/setup/semaphore)
+[!INCLUDE /docs/-ci-list]
 
 ## Clients
 
