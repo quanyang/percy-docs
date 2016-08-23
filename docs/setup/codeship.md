@@ -28,7 +28,7 @@ In your Codeship project go to **Settings > Environment Variables**. Then:
 
 <i>Updated: August 2016</i>
 
-Percy now supports ParallelCI and will automatically merge snapshots from pipelines into a single Percy build.
+Percy supports ParallelCI and will automatically merge snapshots from pipelines into a single Percy build.
 
 [!INCLUDE /docs/setup/-next-step-clients]
 [!INCLUDE /docs/-client-list]
