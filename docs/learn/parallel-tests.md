@@ -12,13 +12,13 @@ Depending on your CI service, you may need to do some simple configuration to su
 
 * **Automatically supported** when using the Percy client libraries:
 
-  * CircleCI parallelism ([docs](https://circleci.com/docs/setting-up-parallelism))
-  * Travis CI parallel builds ([docs](http://docs.travis-ci.com/user/speeding-up-the-build/#Parallelizing-your-builds-across-virtual-machines))
-  * Codeship ParallelCI ([docs](https://codeship.com/documentation/continuous-integration/parallelci/))
+  * CircleCI parallelism
+  * Travis CI parallel builds
+  * Codeship ParallelCI
 
 * **Manual configuration:**
 
-  * parallel_tests gem ([github](https://github.com/grosser/parallel_tests))
+  * [parallel_tests](https://github.com/grosser/parallel_tests) gem
   * Jenkins, Drone, others
 
 ### Manual configuration with environment variables
