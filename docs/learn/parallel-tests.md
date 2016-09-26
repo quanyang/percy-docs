@@ -14,11 +14,11 @@ Depending on your CI service, you may need to do some simple configuration to su
 
   * CircleCI parallelism ([docs](https://circleci.com/docs/setting-up-parallelism))
   * Travis CI parallel builds ([docs](http://docs.travis-ci.com/user/speeding-up-the-build/#Parallelizing-your-builds-across-virtual-machines))
+  * Codeship ParallelCI ([docs](https://codeship.com/documentation/continuous-integration/parallelci/))
 
 * **Manual configuration:**
 
   * parallel_tests gem ([github](https://github.com/grosser/parallel_tests))
-  * Codeship ParallelCI ([docs](https://codeship.com/documentation/continuous-integration/parallelci/))
   * Jenkins, Drone, others
 
 ### Manual configuration with environment variables
