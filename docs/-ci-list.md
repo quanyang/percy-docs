@@ -2,6 +2,7 @@
 * [CircleCI](/docs/setup/circleci)
 * [Semaphore](/docs/setup/semaphore)
 * [Codeship](/docs/setup/codeship)
+* [Buildkite](/docs/setup/buildkite)
 * [Drone](/docs/setup/drone)
 * [Jenkins](/docs/setup/jenkins)
 * [Local development](/docs/setup/local)
