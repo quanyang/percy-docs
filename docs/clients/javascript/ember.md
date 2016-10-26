@@ -141,6 +141,9 @@ See our [GitHub integration](/docs/learn/github-integration) docs for more info.
 
 ## Other resources
 
+<iframe style="max-width: 1000px" width="100%" height="563" src="https://www.youtube-nocookie.com/embed/iECnXK9EqA4" frameborder="0" allowfullscreen></iframe>
+
+* EmberSF meetup video: [Continuous Visual Integration for Ember by Mike Fotinakis](https://www.youtube.com/watch?v=iECnXK9EqA4)
 * EmberScreencasts video: [Introduction to Visual Regression Testing](https://www.emberscreencasts.com/posts/160)
 
 ## Contributing
