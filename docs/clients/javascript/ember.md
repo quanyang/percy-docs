@@ -139,6 +139,10 @@ Percy **automatically integrates with GitHub PRs**, so you can do visual reviews
 
 See our [GitHub integration](/docs/learn/github-integration) docs for more info.
 
+## Troubleshooting
+
+  * Missing fonts in Percy? Make sure that your `tests/index.html` mirrors your main `index.html` file. You should include any fonts or external stylesheets in both places.
+
 ## Other resources
 
 <iframe style="max-width: 1000px" width="100%" height="563" src="https://www.youtube-nocookie.com/embed/iECnXK9EqA4" frameborder="0" allowfullscreen></iframe>
