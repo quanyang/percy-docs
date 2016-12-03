@@ -208,6 +208,10 @@ config.assets.debug = false
 
 There is no compelling reason to have debug assets permanently enabled in tests—debug assets disables concatination of asset files and will negatively affect your test performance and consistency. You must turn off debug assets in tests for Percy to work correctly.
 
+### Cleanup locally compiled assets
+
+Have you run `rake assets:precompile` locally to test assets? These compiled assets take precedence over others and can break Percy's asset discovery. You should run `rake assets:clobber` to clear out your `public/assets` directory.
+
 ## Other resources
 
 *   [Percy::Capybara Reference](http://www.rubydoc.info/gems/percy-capybara/Percy/Capybara) on RubyDoc
