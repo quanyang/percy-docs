@@ -24,5 +24,24 @@ In your Buildkite pipeline, go to **Settings > Steps > Environment Variables**. 
 
 </div>
 
+### Setup for docker-compose
+
+If you use Docker containers in your Buildkite builds, you need to pass some environment variables in to your containers for Percy's client library to detect the environment correctly.
+
+Add this to your `docker-compose.yml`:
+
+```yaml
+  environment:
+    - BUILDKITE
+    - BUILDKITE_COMMIT
+    - BUILDKITE_BRANCH
+    - BUILDKITE_PULL_REQUEST
+    - BUILDKITE_BUILD_ID
+    - PERCY_TOKEN
+    - PERCY_PROJECT
+```
+
+By leaving the value blank, Docker will pass through the value from the host Buildkite environment.
+
 [!INCLUDE /docs/setup/-next-step-clients]
 [!INCLUDE /docs/-client-list]
