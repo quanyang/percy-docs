@@ -13,9 +13,7 @@ Requires Node >= 0.12.0.
 Requires `ember-cli` >= 1.13.13, preferably >= 2.4.0.
 
 1. `ember install ember-percy`
-1. Register the percy test helpers for acceptance tests.
-    * **For apps**, add `import '../helpers/percy/register-helpers';` to `module-for-acceptance.js`.
-    * **For addons**, add `import 'dummy/tests/helpers/percy/register-helpers';` in `module-for-acceptance.js`.
+1. Add `import './percy/register-helpers';` to `tests/helpers/start-app.js`. This registers the Percy test helpers for all acceptance tests.
 1. Add `percySnapshot` to `tests/.jshintrc` in the `predef` section to avoid "percySnapshot is not defined" errors.
 
 ## Usage
