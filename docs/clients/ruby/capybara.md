@@ -147,13 +147,7 @@ $ PERCY_TOKEN=aaabbbcccdddeeefff PERCY_PROJECT=my-org/my-repo bundle exec rspec
 
 Careful though—if you run this in your local `master` branch, Percy cannot tell the difference between your local environment and your CI environment, so this will set the repo's `master` state in Percy. You can avoid this by simply checking out a different branch, or setting the `PERCY_BRANCH` environment variable.
 
-If you wish you disable Percy from running in your development environment, you can remove these environment variables, or set `PERCY_ENABLE` to 0.
-
-```bash
-$ export PERCY_ENABLE=0  # Disables Percy::Capybara
-$ bundle exec rspec
-```
-
+If you wish to disable Percy from running in an environment, simply remove the environment variables, or explicitly set `PERCY_ENABLE=0`.
 
 ### Identifying snapshots
 
