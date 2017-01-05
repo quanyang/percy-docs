@@ -129,12 +129,11 @@ Percy::Capybara.snapshot(page, name: 'homepage', widths: [375, 1280])
 
 ### Local dev environments
 
-By default, Percy is disabled in local dev environments to avoid teams accidentally overriding each others' changes while developing feature specs. However, you may want to enable Percy locally while getting set up. See [Local development](/docs/setup/local) setup for more info.
+You may want to enable Percy locally while getting set up. See [Local development](/docs/setup/local) setup for more info.
 
-The `Percy::Capybara` client requires an additional environment variables of `PERCY_ENABLE=1` to be set in order to run locally. You can temporarily set all the environment vars to run locally:
+The `Percy::Capybara` client requires environment variables `PERCY_TOKEN` and `PERCY_PROJECT` to be set in order to run locally. You can temporarily set the environment vars to run locally:
 
 ```bash
-$ export PERCY_ENABLE=1  # Required only for Percy::Capybara in local dev environments.
 $ export PERCY_TOKEN=aaabbbcccdddeeefff
 $ export PERCY_PROJECT=my-org/my-repo
 $ bundle exec rspec
@@ -143,10 +142,18 @@ $ bundle exec rspec
 Or in one line:
 
 ```bash
-$ PERCY_ENABLE=1 PERCY_TOKEN=aaabbbcccdddeeefff PERCY_PROJECT=my-org/my-repo bundle exec rspec
+$ PERCY_TOKEN=aaabbbcccdddeeefff PERCY_PROJECT=my-org/my-repo bundle exec rspec
 ```
 
 Careful though—if you run this in your local `master` branch, Percy cannot tell the difference between your local environment and your CI environment, so this will set the repo's `master` state in Percy. You can avoid this by simply checking out a different branch, or setting the `PERCY_BRANCH` environment variable.
+
+If you wish you disable Percy from running in your development environment, you can remove these environment variables, or set `PERCY_ENABLE` to 0.
+
+```bash
+$ export PERCY_ENABLE=0  # Disables Percy::Capybara
+$ bundle exec rspec
+```
+
 
 ### Identifying snapshots
 
