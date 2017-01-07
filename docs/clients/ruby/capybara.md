@@ -71,6 +71,12 @@ Percy::Capybara.initialize_build
 MiniTest.after_run { Percy::Capybara.finalize_build }
 ```
 
+<div class="Alert Alert--warning">
+
+**NOTE:** Rails 5.0.0 has a bug and doesn't invoke MiniTest.after_run. Please upgrade to 5.0.1 or use an at_exit hook instead.
+
+</div>
+
 ### Non-Rails frameworks (Sinatra, etc.)
 
 Without Rails autoloading, you will need to manually `require 'percy/capybara'` when using Percy.
