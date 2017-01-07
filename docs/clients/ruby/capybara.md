@@ -71,6 +71,9 @@ Percy::Capybara.initialize_build
 MiniTest.after_run { Percy::Capybara.finalize_build }
 ```
 
+**NOTE:** Rails 5.0.0 has a bug and doesn't invoke MiniTest.after_run. This was fixed in Rails 5.0.1.
+For Rails 5.0.0, finalize the build with: `at_exit { Percy::Capybara.finalize_build }`.
+
 ### Non-Rails frameworks (Sinatra, etc.)
 
 Without Rails autoloading, you will need to manually `require 'percy/capybara'` when using Percy.
