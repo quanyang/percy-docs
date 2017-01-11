@@ -1,4 +1,5 @@
-# ember-percy [<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/ember-percy)
+# Percy for Ember
+#### [ember-percy on GitHub <i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/ember-percy)
 
 [![Package Status](https://img.shields.io/npm/v/ember-percy.svg)](https://www.npmjs.com/package/ember-percy)
 [![Build Status](https://travis-ci.org/percy/ember-percy.svg?branch=master)](https://travis-ci.org/percy/ember-percy)

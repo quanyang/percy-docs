@@ -1,4 +1,5 @@
-# Percy::Client [<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/percy-client)
+# Ruby API client
+#### [Percy::Client on GitHub <i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/percy-client)
 
 [![](https://travis-ci.org/percy/percy-client.svg?branch=master)](https://travis-ci.org/percy/percy-client)
 [![](https://badge.fury.io/rb/percy-client.svg)](https://rubygems.org/gems/percy-client)

@@ -1,4 +1,5 @@
-# percy-client (JavaScript) [<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/percy-js)
+# JavaScript API client
+#### [percy-js on GitHub <i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/percy-js)
 
 [![Build Status](https://travis-ci.org/percy/percy-js.svg?branch=master)](https://travis-ci.org/percy/percy-js)
 [![Package Status](https://img.shields.io/npm/v/percy-client.svg)](https://www.npmjs.com/package/percy-client)
