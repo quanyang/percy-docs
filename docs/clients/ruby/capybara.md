@@ -1,4 +1,5 @@
-# Percy::Capybara [<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/percy-capybara)
+# Percy for Ruby and Capybara
+#### [ Percy::Capybara on GitHub <i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/percy-capybara)
 
 [![](https://travis-ci.org/percy/percy-capybara.svg?branch=master)](https://travis-ci.org/percy/percy-capybara)
 [![](https://badge.fury.io/rb/percy-capybara.svg)](https://rubygems.org/gems/percy-capybara)

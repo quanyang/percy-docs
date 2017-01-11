@@ -1,4 +1,5 @@
-# Percy command-line interface [<i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/percy-cli)
+# Percy for static websites
+#### [percy-cli on GitHub <i class="fa fa-github" aria-hidden="true"></i>](https://github.com/percy/percy-cli)
 
 [![](https://travis-ci.org/percy/percy-cli.svg?branch=master)](https://travis-ci.org/percy/percy-cli)
 [![](https://badge.fury.io/rb/percy-cli.svg)](https://rubygems.org/gems/percy-cli)
