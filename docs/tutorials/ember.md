@@ -34,7 +34,7 @@ $ npm install && bower install
 **Step 5:** Run the tests:
 
 ```bash
-$ ember test
+$ npm test
 ```
 
 This will run the test suite and send snapshots to Percy. You can view the snapshots in Percy now if you want, but there will be no visual comparisons yet.
@@ -54,7 +54,7 @@ $ git add . && git commit -m "Changed background color and updated footer."
 **Step 9:** Run the tests again:
 
 ```bash
-$ ember test
+$ npm test
 ```
 
 This will rerun the tests with your changes and upload new snapshots to Percy.  The new snapshots will be compared with the previous snapshots, showing any visual diffs.
