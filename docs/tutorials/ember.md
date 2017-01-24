@@ -48,8 +48,7 @@ This will run the test suite and send snapshots to Percy. You can view the snaps
 **Step 8:** Commit the change:
 
 ```bash
-$ git add .
-$ git commit -m "Changed background color and updated footer."
+$ git add . && git commit -m "Changed background color and updated footer."
 ```
 
 **Step 9:** Run the tests again:
