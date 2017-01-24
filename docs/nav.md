@@ -8,6 +8,10 @@
 
 [!INCLUDE /docs/-client-list]
 
+# Tutorials
+
+* [Ember tutorial](/docs/tutorials/ember)
+
 # Learn
 
 * [GitHub integration](/docs/learn/github-integration)
