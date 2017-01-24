@@ -1,6 +1,6 @@
 # Percy Tutorial for Ember
 
-This 2 minute guide walks you through cloning the TodoMVC example app, changing the footer, and seeing the visual difference in Percy’s visual review tool.
+This 2 minute guide walks you through cloning the TodoMVC example app, making some changes, and seeing the visual difference in Percy’s visual review tool.
 
 Percy usually runs in [CI environments](/docs), but to keep this simple we’re going to configure it to run in your local environment.  
 
@@ -29,13 +29,15 @@ export PERCY_PROJECT=<your project here>
 
 ![](/images/docs/tutorial-without-diffs.png)
 
-**Step 6:** Use your text editor to edit `app/templates/application.hbs` and edit the footer to add a new paragraph on line 29: `<p>Now tested with Percy.io</p>`
+**Step 6:** Used your text editor to edit `app/styles/app.css` and change #new-todo's background-color from `#ffffff` to `#f5f5f5`.
 
-**Step 7:** Commit the change.  `git add .; git commit -m "Added a line to the footer"`
+**Step 7:** Also edit `app/templates/application.hbs` and edit the footer to add a new paragraph on line 29: `<p>Now tested with Percy.io</p>`
 
-**Step 8:** Run `ember test` again.  This will rerun the tests against your changes, and upload the new snapshot to Percy.  The new snapshots will be compared with the previous snapshots, creating a visual diff.
+**Step 8:** Commit the change.  `git add .; git commit -m "Changed background color and updated footer."`
 
-**Step 9:** Visit your project in Percy (if you're already on the page, push the refresh button) and you’ll see the visual comparison between the two test runs.  Click anywhere on the Build 2 row that says ‘2 visual diffs’.  You can see the original snapshot on the left, and new snapshot on the right.
+**Step 9:** Run `ember test` again.  This will rerun the tests against your changes, and upload the new snapshot to Percy.  The new snapshots will be compared with the previous snapshots, creating a visual diff.
+
+**Step 10:** Visit your project in Percy (if you're already on the page, push the refresh button) and you’ll see the visual comparison between the two test runs.  Click anywhere on the Build 2 row that says ‘2 visual diffs’.  You can see the original snapshot on the left, and new snapshot on the right.
 
 Percy has highlighted what’s changed on the page.  You can click on the highlight to reveal the underlying screenshot.
 
