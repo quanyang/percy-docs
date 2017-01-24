@@ -67,4 +67,4 @@ Percy has highlighted what's changed on the page! You can click on the highlight
 
 ![](/images/docs/tutorial-with-diffs.png)
 
-This tutorial used TodoMVC with Percy already added—you can see how we [added Percy to TodoMVC](https://github.com/percy/example-ember/compare/pre-percy...master), and check out the [docs](https://percy.io/docs/clients/javascript/ember) for how to add Percy to your own Ember app!
+This tutorial used TodoMVC with Percy already added—you can see how we [added Percy to TodoMVC](https://github.com/percy/example-ember/compare/pre-percy...master), and check out the [docs](/docs/clients/javascript/ember) for how to add Percy to your own Ember app!
