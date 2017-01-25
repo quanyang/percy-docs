@@ -8,9 +8,9 @@
 
 [!INCLUDE /docs/-client-list]
 
-# Tutorials
+# Tutorials <sup style="color: red">new!</sup>
 
-* [Ember tutorial](/docs/tutorials/ember)
+[!INCLUDE /docs/-tutorials-list]
 
 # Learn
 
