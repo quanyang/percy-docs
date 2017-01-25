@@ -42,6 +42,20 @@ module.exports = {
   isDevelopingAddon: function() {
     return true;
   },
+  treeForPublic: function(tree) {
+    var assetsTree = new Funnel('public', {
+      include: [
+        'images/docs/*.png',
+        'images/docs/*.jpg',
+        'images/docs/*.jpeg',
+        'images/docs/*.gif',
+        'images/docs/*.svg',
+      ],
+    });
+    return mergeTrees([tree, assetsTree], {
+      overwrite: true
+    });
+  },
   treeForAddon: function(tree) {
     // Find all the markdown files in the `/docs` folder, and flatiron them into `markdownFiles.js`.
     var mdPaths = [];

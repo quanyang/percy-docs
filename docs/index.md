@@ -18,6 +18,10 @@ Select your CI service to get started:
 
 [!INCLUDE /docs/-client-list]
 
+## Tutorials <sup style="color: red">new!</sup>
+
+[!INCLUDE /docs/-tutorials-list]
+
 In minutes, you will have Percy's visual reviews integrated in your application:
 
 <div style="max-width: 1000px; margin-bottom: 1em">
@@ -26,7 +30,7 @@ In minutes, you will have Percy's visual reviews integrated in your application:
 
 </div>
 
-### Automatic GitHub integration
+## Automatic GitHub integration
 
 <div style="max-width: 1000px; margin-bottom: 1em">
 

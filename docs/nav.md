@@ -8,6 +8,10 @@
 
 [!INCLUDE /docs/-client-list]
 
+# Tutorials <sup style="color: red">new!</sup>
+
+[!INCLUDE /docs/-tutorials-list]
+
 # Learn
 
 * [GitHub integration](/docs/learn/github-integration)
