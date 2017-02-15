@@ -26,19 +26,20 @@ $ gem update percy-cli
 
 ## Local testing
 
-Percy CLI relies on the `PERCY_TOKEN` environment variable for authenticating and authorizing access to each repository.
+Percy CLI relies on the `PERCY_TOKEN` and `PERCY_PROJECT` environment variables for authenticating and authorizing access to each repository.
 
-You can temporarily set this in your local shell session by exporting the variable:
+You can temporarily set these in your local shell session by exporting the variables:
 
 ```bash
 $ export PERCY_TOKEN=aaabbbcccdddeeefff
+$ export PERCY_PROJECT=my-org/my-project
 $ percy snapshot _site/
 ```
 
 Or you can set it just for the current command:
 
 ```bash
-$ PERCY_TOKEN=aaabbbcccdddeeefff percy snapshot _site/
+$ PERCY_TOKEN=aaabbbcccdddeeefff PERCY_PROJECT=my-org/my-project percy snapshot _site/
 ```
 
 <div class="Alert Alert--warning">
