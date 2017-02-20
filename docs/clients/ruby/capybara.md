@@ -78,9 +78,31 @@ MiniTest.after_run { Percy::Capybara.finalize_build }
 
 </div>
 
-### Non-Rails frameworks (Sinatra, etc.)
+## Non-Rails asset setup (Webpack, Sinatra/Rack apps, etc.)
 
-Without Rails autoloading, you will need to manually `require 'percy/capybara'` when using Percy.
+Percy automatically supports the Rails asset pipeline with no configuration, but non-Rails apps will need to add a `use_loader` configuration in order to load assets correctly. This loader config must be setup before `initialize_build` is called.
+
+### Filesystem loader
+
+Percy::Capybara can be used with any asset pipeline, including [webpack](https://webpack.github.io/), by simply pointing it at a directory of compiled assets.
+
+```ruby
+require 'percy/capybara'
+
+assets_dir = File.expand_path('../../dist/', __FILE__)
+Percy::Capybara.use_loader(:filesystem, assets_dir: assets_dir, base_url: '/assets')
+```
+
+* `assets_dir`: absolute path to your compiled static assets (_not_ source assets).
+* `base_url`: (optional) path prefix to where your webserver serves the assets (ex: `/assets`)
+
+### Native loader (slower)
+
+The native loader attempts to load assets directly from pages rather than from an asset pipeline. Though it works in many situations, we highly recommend using filesystem loader instead as it is much faster and more comprehensively gathers assets. However, if you'd still like to use the native loader, configure it like this:
+
+```ruby
+Percy::Capybara.use_loader(:native)
+```
 
 ## Usage
 
