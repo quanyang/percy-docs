@@ -14,7 +14,7 @@ Select your CI service to get started:
 
 [!INCLUDE /docs/-ci-list]
 
-## Clients
+## Platforms
 
 [!INCLUDE /docs/-client-list]
 
