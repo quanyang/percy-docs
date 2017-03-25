@@ -4,11 +4,11 @@
 
 [!INCLUDE /docs/-ci-list]
 
-# Clients
+# Platforms
 
 [!INCLUDE /docs/-client-list]
 
-# Tutorials <sup style="color: red">new!</sup>
+# Tutorials
 
 [!INCLUDE /docs/-tutorials-list]
 

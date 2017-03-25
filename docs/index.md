@@ -18,7 +18,7 @@ Select your CI service to get started:
 
 [!INCLUDE /docs/-client-list]
 
-## Tutorials <sup style="color: red">new!</sup>
+## Tutorials
 
 [!INCLUDE /docs/-tutorials-list]
 

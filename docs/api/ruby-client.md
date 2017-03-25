@@ -20,7 +20,7 @@ Add this line to your application's Gemfile:
 gem 'percy-client'
 ```
 
-And then execute:
+And then run:
 
 ```bash
 $ bundle install
