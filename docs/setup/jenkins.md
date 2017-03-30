@@ -16,7 +16,7 @@ Alternatively you could export the variables as part of the build script:
 export PERCY_TOKEN=aaabbbcccdddeeefff
 export PERCY_PROJECT=my-org/repo-name
 
-# Now run your tests locally (just an example, depends on client library used):
+# Now run your tests (just an example, this depends on the client library used):
 bundle exec rspec
 ```
 
