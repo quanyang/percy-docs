@@ -26,7 +26,7 @@ The first build may be slower than usual while assets are first uploaded, but th
 
 #### Do you support cross-browser testing?
 
-**No.** You often only need one good, modern browser to get the main benefits of visual regression testing. Right now, all screenshots are rendered in a modern browser (Firefox 38 ESR). We are considering adding support for cross-browser testing in the future.
+**No.** You often only need one good, modern browser to get the main benefits of visual regression testing. Right now, all screenshots are rendered in a modern browser (Firefox 45 ESR). We are considering adding support for cross-browser testing in the future.
 
 #### How do you handle dynamic page content?
 
