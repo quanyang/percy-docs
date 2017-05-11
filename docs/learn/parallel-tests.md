@@ -15,6 +15,7 @@ Depending on your CI service, you may need to do some simple configuration to su
   * CircleCI parallelism
   * Travis CI parallel builds
   * Codeship ParallelCI
+  * [Buildkite parallelism](https://buildkite.com/docs/builds/parallelizing-builds)
 
 * **Manual configuration:**
 
