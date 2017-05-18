@@ -78,6 +78,32 @@ MiniTest.after_run { Percy::Capybara.finalize_build }
 
 </div>
 
+### Ember CLI Rails
+
+If you are using [Ember CLI Rails](https://github.com/thoughtbot/ember-cli-rails) you need to tell
+Percy about the Ember apps you've mounted in `routes.rb`.
+
+For example, if your `routes.rb` file looks like this:
+
+```ruby
+Rails.application.routes.draw do
+  mount_ember_app :admin, to: "/admin", controller: "admin"
+  mount_ember_app :frontend, to: "/"
+end
+```
+
+Then configure your before suite block like this:
+
+```ruby
+config.before(:suite) do
+  ember_apps = {admin: '/admin', frontend: '/'}
+
+  EmberCli.compile!
+  Percy::Capybara.use_loader(:ember_cli_rails, {mounted_apps: ember_apps})
+  Percy::Capybara.initialize_build
+end
+```
+
 ## Usage
 
 Now the fun part!
