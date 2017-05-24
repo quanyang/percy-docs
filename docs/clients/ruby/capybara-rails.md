@@ -78,32 +78,6 @@ MiniTest.after_run { Percy::Capybara.finalize_build }
 
 </div>
 
-### Ember CLI Rails
-
-If you are using [Ember CLI Rails](https://github.com/thoughtbot/ember-cli-rails) you need to tell
-Percy about the Ember apps you've mounted in `routes.rb`.
-
-For example, if your `routes.rb` file looks like this:
-
-```ruby
-Rails.application.routes.draw do
-  mount_ember_app :admin, to: "/admin", controller: "admin"
-  mount_ember_app :frontend, to: "/"
-end
-```
-
-Then configure your before suite block like this:
-
-```ruby
-config.before(:suite) do
-  ember_apps = {admin: '/admin', frontend: '/'}
-
-  EmberCli.compile!
-  Percy::Capybara.use_loader(:ember_cli_rails, {mounted_apps: ember_apps})
-  Percy::Capybara.initialize_build
-end
-```
-
 ## Usage
 
 Now the fun part!
@@ -175,6 +149,49 @@ Percy::Capybara.snapshot(page, name: 'homepage (with dropdown clicked)')
 ```
 
 The `name` param can be any string that makes sense to you to identify the page state. It should be unique and remain the same across builds. It is **required** if you are snapshotting a page multiple times with the same URL.
+
+## Advanced
+
+### Including iframes
+
+Percy::Capybara disables iframes by default. We've found that iframes usually don't affect the rendering of the page, and can sometimes timeout and break builds. However, if you'd like to include iframes, use the `include_iframes` option.
+
+```ruby
+RSpec.configure do |config|
+  # ..
+  config.before(:suite) do
+    Percy::Capybara.use_loader(:sprockets_loader, include_iframes: true)
+  end
+end
+```
+
+
+### Ember CLI Rails
+
+If you are using [Ember CLI Rails](https://github.com/thoughtbot/ember-cli-rails) you need to tell
+Percy about the Ember apps you've mounted in `routes.rb`.
+
+For example, if your `routes.rb` file looks like this:
+
+```ruby
+Rails.application.routes.draw do
+  mount_ember_app :admin, to: "/admin", controller: "admin"
+  mount_ember_app :frontend, to: "/"
+end
+```
+
+Then configure your before suite block like this:
+
+```ruby
+config.before(:suite) do
+  ember_apps = {admin: '/admin', frontend: '/'}
+
+  EmberCli.compile!
+  Percy::Capybara.use_loader(:ember_cli_rails, {mounted_apps: ember_apps})
+  Percy::Capybara.initialize_build
+end
+```
+
 
 ## Troubleshooting
 

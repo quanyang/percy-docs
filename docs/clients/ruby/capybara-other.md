@@ -174,6 +174,17 @@ Percy::Capybara.snapshot(page, name: 'homepage (with dropdown clicked)')
 
 The `name` param can be any string that makes sense to you to identify the page state. It should be unique and remain the same across builds. It is **required** if you are snapshotting a page multiple times with the same URL.
 
+## Advanced
+
+### Including iframes
+
+Percy::Capybara disables iframes by default. We've found that iframes usually don't affect the rendering of the page, and can sometimes timeout and break builds. However, if you'd like to include iframes, use the `include_iframes` option.
+
+```ruby
+Percy::Capybara.use_loader(... , include_iframes: true)
+```
+
+
 ## Troubleshooting
 
 ### Debug mode
