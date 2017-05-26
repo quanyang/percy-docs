@@ -1,6 +1,8 @@
 # Percy for React
 
-If you use `react-rails`, please see the [Percy for Rails](/docs/clients/ruby/capybara-rails) docs.
+If you use **React Storybook**, please see Percy's [React Storybook](/docs/clients/javascript/react-storybook) docs.
+
+If you use **react-rails**, please see the [Percy for Rails](/docs/clients/ruby/capybara-rails) docs.
 
 <div class="Alert Alert--warning">
 
@@ -13,4 +15,3 @@ If you'd like to test your React app today, check out [Percy Anywhere](/docs/cli
 ## Beta tester signup
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdCwHkLHb76gckcGUXD_n-JUub9S6uiYX_o2KRka4c_vGuD7w/viewform?embedded=true" width="960" height="2000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
