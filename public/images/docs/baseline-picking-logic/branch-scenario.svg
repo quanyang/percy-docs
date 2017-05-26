@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="629px" height="169px" viewBox="0 0 629 169" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>branch-scenario</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Branch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="branch-scenario">
+            <path d="M180.5,148.5 L259.5,148.5" id="Line" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M95.5,148.5 L174.5,148.5" id="Line" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M154.881205,91.9228355 L245.390873,115.964466" id="Line-Copy" stroke="#582A64" stroke-width="3" stroke-linecap="square" transform="translate(200.232233, 104.368272) scale(-1, 1) rotate(45.000000) translate(-200.232233, -104.368272) "></path>
+            <path d="M384.886719,61.8925781 L351.78125,138.472656" id="Line" stroke="#DADADA" stroke-width="3" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M351.78125,138.472656 L358.820479,129.749741 L353.313068,127.368894 L351.78125,138.472656 Z" stroke="#DADADA" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Commit" transform="translate(82.000000, 142.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <g id="Commit" transform="translate(170.000000, 142.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <g id="Commit" transform="translate(255.000000, 142.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <path d="M267.5,148.5 L346.5,148.5" id="Line-Copy-3" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Commit" transform="translate(342.000000, 142.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <path d="M224.5,59.5 L296.5,59.5" id="Line-Copy-2" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M385.5,57.5 L385.5,21.4861138" id="Line-Copy-2" stroke="#D9D9D9" stroke-width="3" stroke-linecap="square" stroke-dasharray="5"></path>
+            <path d="M306.5,59.5 L378.5,59.5" id="Line-Copy-2" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Commit" transform="translate(379.000000, 53.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <g id="Commit" transform="translate(219.000000, 54.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <text id="master-branch" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="0" y="153">master branch</tspan>
+            </text>
+            <text id="baseline" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="330.649414" y="168">baseline</tspan>
+            </text>
+            <text id="head" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="399" y="63">head</tspan>
+            </text>
+            <text id="my_feature-branch" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="112" y="64">my_feature branch</tspan>
+            </text>
+            <text id="New-commit-is-pushed" font-family="Helvetica" font-size="15" font-weight="normal" fill="#333333">
+                <tspan x="403" y="16">New commit is pushed</tspan>
+            </text>
+            <g id="Step-Number" transform="translate(374.000000, 0.000000)">
+                <g>
+                    <circle id="Oval" fill="#D9D9D9" cx="11" cy="11" r="11"></circle>
+                    <text id="1" font-family="Helvetica-Bold, Helvetica" font-size="15" font-weight="bold" fill="#333333">
+                        <tspan x="6.82885742" y="16">1</tspan>
+                    </text>
+                </g>
+            </g>
+            <text id="Percy-compares-my_fe" font-family="Helvetica" font-size="15" font-weight="normal" fill="#333333">
+                <tspan x="404" y="112">Percy compares my_feature head </tspan>
+                <tspan x="404" y="130">to the most recent commit on the </tspan>
+                <tspan x="404" y="148">master branch</tspan>
+            </text>
+            <g id="Step-Number" transform="translate(375.000000, 96.000000)">
+                <g>
+                    <circle id="Oval" fill="#D9D9D9" cx="11" cy="11" r="11"></circle>
+                    <text id="1" font-family="Helvetica-Bold, Helvetica" font-size="15" font-weight="bold" fill="#333333">
+                        <tspan x="6.82885742" y="16">2</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Commit" transform="translate(297.000000, 53.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

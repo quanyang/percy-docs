@@ -18,6 +18,7 @@
 * [Responsive visual diffs](/docs/learn/responsive)
 * [Animations](/docs/learn/animations)
 * [Font services](/docs/learn/fonts)
+* [Baseline picking logic](/docs/learn/baseline-picking-logic)
 * [Parallel test suites](/docs/learn/parallel-tests)
 * [Environment variables](/docs/learn/env-vars)
 * [FAQ](/docs/learn/faq)

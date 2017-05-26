@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="548px" height="169px" viewBox="0 0 548 169" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>pull-merge-created-scenario</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Branch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pull-merge-created-scenario">
+            <path d="M180.5,148.5 L259.5,148.5" id="Line-Copy-4" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M95.5,148.5 L174.5,148.5" id="Line-Copy-5" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M154.881205,91.9228355 L245.390873,115.964466" id="Line-Copy-6" stroke="#582A64" stroke-width="3" stroke-linecap="square" transform="translate(200.232233, 104.368272) scale(-1, 1) rotate(45.000000) translate(-200.232233, -104.368272) "></path>
+            <path d="M304.5,61.5 L185.5,142.5" id="Line-Copy-7" stroke="#DADADA" stroke-width="3" stroke-linecap="square"></path>
+            <path id="Line-Copy-7-decoration-1" d="M185.5,142.5 L196.116084,138.902952 L192.739944,133.942944 L185.5,142.5 Z" stroke="#DADADA" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Commit" transform="translate(82.000000, 142.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <g id="Commit" transform="translate(170.000000, 142.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <g id="Commit" transform="translate(255.000000, 142.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <path d="M267.5,148.5 L346.5,148.5" id="Line-Copy-8" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Commit" transform="translate(342.000000, 142.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <path d="M224.5,59.5 L296.5,59.5" id="Line-Copy-9" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M303.5,57.5 L303.5,21.4861138" id="Line-Copy-10" stroke="#D9D9D9" stroke-width="3" stroke-linecap="square" stroke-dasharray="5"></path>
+            <g id="Commit" transform="translate(297.000000, 53.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <g id="Commit" transform="translate(219.000000, 54.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <text id="master-branch-copy" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="0" y="153">master branch</tspan>
+            </text>
+            <text id="baseline-copy" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="152.149414" y="168">baseline</tspan>
+            </text>
+            <text id="head-copy" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="316" y="63">head</tspan>
+            </text>
+            <text id="my_feature-branch-copy" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="112" y="64">my_feature branch</tspan>
+            </text>
+            <text id="New-pull/merge-reque" font-family="Helvetica" font-size="15" font-weight="normal" fill="#333333">
+                <tspan x="321" y="16">New pull/merge request is created</tspan>
+            </text>
+            <g id="Step-Number" transform="translate(292.000000, 0.000000)">
+                <g>
+                    <circle id="Oval" fill="#D9D9D9" cx="11" cy="11" r="11"></circle>
+                    <text id="1" font-family="Helvetica-Bold, Helvetica" font-size="15" font-weight="bold" fill="#333333">
+                        <tspan x="6.82885742" y="16">1</tspan>
+                    </text>
+                </g>
+            </g>
+            <text id="Percy-compares-my_fe" font-family="Helvetica" font-size="15" font-weight="normal" fill="#333333">
+                <tspan x="321" y="101">Percy compares my_feature head </tspan>
+                <tspan x="321" y="119">to the pull/merge request baseline</tspan>
+            </text>
+            <g id="Step-Number" transform="translate(292.000000, 85.000000)">
+                <g>
+                    <circle id="Oval" fill="#D9D9D9" cx="11" cy="11" r="11"></circle>
+                    <text id="1" font-family="Helvetica-Bold, Helvetica" font-size="15" font-weight="bold" fill="#333333">
+                        <tspan x="6.82885742" y="16">2</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="519px" height="126px" viewBox="0 0 519 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>master-commits-scenario</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Branch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="master-commits-scenario">
+            <path d="M180.5,58.5 L259.5,58.5" id="Line-Copy-11" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M95.5,58.5 L174.5,58.5" id="Line-Copy-12" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M346.6875,52.5 C341.229818,26.8294271 327.38444,13.9941406 305.151367,13.9941406 C282.918294,13.9941406 269.072917,25.0768229 263.615234,47.2421875" id="Line-Copy-14" stroke="#DADADA" stroke-width="3" stroke-linecap="square"></path>
+            <path id="Line-Copy-14-decoration-1" d="M263.615234,47.2421875 L269.110347,37.4726562 L263.284354,36.0381472 L263.615234,47.2421875 Z" stroke="#DADADA" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Commit" transform="translate(82.000000, 52.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <g id="Commit" transform="translate(170.000000, 52.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <g id="Commit" transform="translate(255.000000, 52.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+            <path d="M267.5,58.5 L346.5,58.5" id="Line-Copy-15" stroke="#582A64" stroke-width="3" stroke-linecap="square"></path>
+            <text id="master-branch-copy-2" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="0" y="63">master branch</tspan>
+            </text>
+            <text id="baseline-copy-2" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="240.149414" y="78">baseline</tspan>
+            </text>
+            <text id="head-copy-2" font-family="Helvetica" font-size="12" font-weight="normal" fill="#333333">
+                <tspan x="337" y="78">head</tspan>
+            </text>
+            <text id="New-commit-is-pushed" font-family="Helvetica" font-size="15" font-weight="normal" fill="#333333">
+                <tspan x="369" y="16">New commit is pushed</tspan>
+            </text>
+            <g id="Step-Number" transform="translate(340.000000, 0.000000)">
+                <g>
+                    <circle id="Oval" fill="#D9D9D9" cx="11" cy="11" r="11"></circle>
+                    <text id="1" font-family="Helvetica-Bold, Helvetica" font-size="15" font-weight="bold" fill="#333333">
+                        <tspan x="6.82885742" y="16">1</tspan>
+                    </text>
+                </g>
+            </g>
+            <text id="Percy-compares-head" font-family="Helvetica" font-size="15" font-weight="normal" fill="#333333">
+                <tspan x="281" y="104">Percy compares head to </tspan>
+                <tspan x="281" y="122">the previous commit</tspan>
+            </text>
+            <g id="Step-Number" transform="translate(252.000000, 88.000000)">
+                <g>
+                    <circle id="Oval" fill="#D9D9D9" cx="11" cy="11" r="11"></circle>
+                    <text id="1" font-family="Helvetica-Bold, Helvetica" font-size="15" font-weight="bold" fill="#333333">
+                        <tspan x="6.82885742" y="16">2</tspan>
+                    </text>
+                </g>
+            </g>
+            <path d="M350.5,58.5 L350.5,18.4500312" id="Line-Copy-2" stroke="#D9D9D9" stroke-width="3" stroke-linecap="square" stroke-dasharray="5"></path>
+            <g id="Commit" transform="translate(342.000000, 52.000000)" fill="#B157B5">
+                <circle id="Oval" cx="6" cy="6" r="6"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,6 +1,6 @@
 # GitHub integration
 
-Percy automatically integrates with GitHub Pull Requests. If you run your tests in a supported CI service, you're done! Percy will automatically set commit statuses whenever your CI service runs a build.
+If you enable the Github integration in your organization, Percy automatically integrates with GitHub pull requests. Percy will automatically set commit statuses whenever your CI service runs a build.
 
 https://github.com/integrations/percy
 
