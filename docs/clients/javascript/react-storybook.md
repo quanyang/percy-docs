@@ -39,6 +39,16 @@ After you've setup the `PERCY_TOKEN` and `PERCY_PROJECT` environment variables, 
 
 This will run Storybook's build-storybook command to create a static site from your storybook, and will upload your stories to Percy to generate screenshots from them.  You'll want to add `storybook-static` to your .gitignore file if you run this locally.
 
+## Freezing time and dynamic data
+
+As you start to introduce visual testing into your workflow, you might find that the passing of time or generated data from tools like [faker](https://github.com/marak/Faker.js/) can cause visual diffs.
+
+It's fairly easy to stabilize these diffs. Tools like faker often allow you to provide a [seed](https://github.com/marak/Faker.js/#setting-a-randomness-seed) to ensure that the same data is generated each time faker is run. Libraries like [timemachine](https://github.com/schickling/timemachine) allow you to override the current date, eliminating variations due to the screenshots being taking at a different date and time.
+
+Percy provides an `inPercy` function that you can use in your Storybook's config.js if you'd prefer that these adjustments only have an effect when running in Percy's rendering environment.  Add the [@percy-io/in-percy](https://www.npmjs.com/package/@percy-io/in-percy) package if you'd like to use inPercy.
+
+You can see an example of how this type of stabilization can be done in this  [storybook/config.js](https://github.com/percy/react-percy/blob/master/integration-tests/.storybook/config.js).
+
 ## Options
 
 These options can be appended to the percy-storybook command in the script tag in your **package.json** file:
@@ -49,7 +59,7 @@ These options can be appended to the percy-storybook command in the script tag i
 
 ## GitHub integration
 
-Percy **automatically integrates with GitHub PRs**, so you can do visual reviews with each PR's code review.
+Percy **automatically integrates with GitHub pull requests**, so you can do visual reviews with each PR's code review.
 
 ![](https://cloud.githubusercontent.com/assets/75300/13929974/13750b2c-ef5a-11e5-9a87-3ad3b335cc0d.png)
 
