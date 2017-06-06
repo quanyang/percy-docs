@@ -28,8 +28,8 @@ You can learn more about encrypting your environment variables for Codeship Pro 
 
 Codeship has more documentation for integrating Percy with your CI/CD builds.
 
-Codeship Pro: https://documentation.codeship.com/pro/continuous-integration/percy-docker/
-Codeship Basic: https://documentation.codeship.com/basic/continuous-integration/percy-basic/
+* Codeship Pro: https://documentation.codeship.com/pro/continuous-integration/percy-docker/
+* Codeship Basic: https://documentation.codeship.com/basic/continuous-integration/percy-basic/
 
 <div class="Alert Alert--warning">
 
