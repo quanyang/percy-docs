@@ -2,7 +2,7 @@
 
 [!INCLUDE /docs/setup/-preamble]
 
-## Codeship project setup
+## Codeship Basic setup
 
 Codeship provides an easy way to set environment variables in settings for a repository:
 
@@ -18,17 +18,24 @@ In your Codeship project go to **Settings > Environment Variables**. Then:
 
 </div>
 
+## Codeship Pro setup
+
+Codeship Pro is based on Docker and uses an encrypted files to load your environment variables into Docker containers. 
+
+You can learn more about encrypting your environment variables for Codeship Pro builds here: https://documentation.codeship.com/pro/builds-and-configuration/environment-variables/
+
+## More information 
+
+Codeship has more documentation for integrating Percy with your CI/CD builds.
+
+Codeship Pro: https://documentation.codeship.com/pro/continuous-integration/percy-docker/
+Codeship Basic: https://documentation.codeship.com/basic/continuous-integration/percy-basic/
+
 <div class="Alert Alert--warning">
 
 **IMPORTANT: Keep your Percy token secret.** Anyone with access to your token can consume your account quota, though they cannot read data.
 
 </div>
-
-## ParallelCI support
-
-<i>Updated: August 2016</i>
-
-Percy supports ParallelCI and will automatically merge snapshots from pipelines into a single Percy build.
 
 [!INCLUDE /docs/setup/-next-step-clients]
 [!INCLUDE /docs/-client-list]
