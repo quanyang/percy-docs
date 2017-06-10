@@ -25,6 +25,7 @@ Percy client libraries pull other information from the environment they are runn
 * `PERCY_COMMIT`: The commit SHA to associate to the build.
 * `PERCY_PULL_REQUEST`: The pull request number to associate to the build, if any.
 * `PERCY_PARALLEL_TOTAL`: When running in CI, the total number of parallel builds to expect.
+  * In most setups this is automatically discovered and does not need to be set. See [Parallel tests](/docs/learn/parallel-tests) for more info.
 
 ## Setting environment variables
 
