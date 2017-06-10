@@ -24,6 +24,7 @@ Percy client libraries pull other information from the environment they are runn
   *  If the Percy build is associated to a GitHub Pull Request, setting this value have no effect and the target branch will be automatically determined from the GitHub PR.
 * `PERCY_COMMIT`: The commit SHA to associate to the build.
 * `PERCY_PULL_REQUEST`: The pull request number to associate to the build, if any.
+* `PERCY_PARALLEL_TOTAL`: When running in CI, the total number of parallel builds to expect.
 
 ## Setting environment variables
 
