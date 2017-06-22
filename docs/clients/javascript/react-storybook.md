@@ -49,13 +49,26 @@ Percy provides an `inPercy` function that you can use in your Storybook's config
 
 You can see an example of how this type of stabilization can be done in this  [storybook/config.js](https://github.com/percy/react-percy/blob/master/integration-tests/.storybook/config.js).
 
+
 ## Options
 
 These options can be appended to the percy-storybook command in the script tag in your **package.json** file:
 
 * **widths** - Specify multiple widths to screenshot your stories at.  eg. `--widths=320,1280`
+* **minimum_height** - Specify the minimum height of story screenshots.  eg. `--minimum_height=300`
 * **build_dir** - By default, percy-storybook looks for the static storybook in the `storybook-static` directory.  If you use build-storybook with a custom output directory, use build_dir instruct percy-storybook where to find it. eg. `--build_dir=my-static-storybook`
+* **rtl** - Process all stories a second time in RTL.  eg. `--rtl`
+* **rtl_regex** - Process stories with matching names a second time in RTL. eg. `--rtl_regex=unidirectional`
 * **debug** - Provides additional debugging information. eg. `--debug`
+
+
+## RTL Direction Support
+
+Percy supports taking screenshots of your stories a second time in the RTL direction.
+
+* To process all stories in the RTL direction, use the `--rtl` option.  To process only a subset in RTL, use the `--rtl_regex` option and provide a regex that will match the names of the stories you want to capture in RTL.
+* Stories you have selected for RTL processing will be processed twice.  Once normally, and then a second time with `[RTL]` appended to their name, and with a `direction=rtl` url param provided.
+* It's up to the stories to process the direction url param and respond appropriately.  You can see a basic example of how this can be done in our [Direction Demo test story](https://github.com/percy/react-percy/blob/master/integration-tests/stories/index.js).
 
 ## GitHub integration
 
