@@ -102,12 +102,12 @@ You can use Percy [responsive visual diffs](/docs/learn/responsive) to test page
 $ percy snapshot --widths "375,1280" _site/
 ```
 
-### Limit pages for testing
+### Enable JavaScript
 
-If you have a very large site, you might want to limit the number of pages that are actually uploaded to Percy while testing. You can pass the `snapshot_limit` flag to do this:
+By default, JavaScript is not enabled in the Percy rendering environment (in Percy's other SDKs JavaScript is run in tests locally, but in the CLI no JavaScript is run). To enable it for your static site add this argument:
 
 ```bash
-$ percy snapshot _site/ --snapshot_limit 10
+$ percy snapshot _site/ --enable_javascript
 ```
 
 ### Base URL path
