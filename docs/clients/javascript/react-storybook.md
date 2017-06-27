@@ -16,18 +16,24 @@ This adds [Percy](https://percy.io) visual testing and review to your [**React S
 
 **Storybook v2:**
 
-`if (typeof window === 'object') window.__storybook_stories__ = require('@kadira/storybook').getStorybook();`
+```javascript
+if (typeof window === 'object') window.__storybook_stories__ = require('@kadira/storybook').getStorybook();
+```
 
 **Storybook v3:**
 
-`if (typeof window === 'object') window.__storybook_stories__ = require('@storybook/react').getStorybook();`
+```javascript
+if (typeof window === 'object') window.__storybook_stories__ = require('@storybook/react').getStorybook();
+```
 
 
 ## Usage
 
 After you've setup the `PERCY_TOKEN` and `PERCY_PROJECT` environment variables, run:
 
-`npm run snapshot`
+```bash
+$ npm run snapshot
+```
 
 This will run Storybook's build-storybook command to create a static site from your storybook, and will upload your stories to Percy to generate screenshots from them.  You'll want to add `storybook-static` to your .gitignore file if you run this locally.
 
@@ -74,7 +80,9 @@ See our [GitHub integration](/docs/learn/github-integration) docs for more info.
 
 If you see an error message `Storybook object not found on window.` and followed all of the installation instructions, then please add the debug flag to the script command in your **package.json file**:
 
-`"snapshot": "build-storybook && percy-storybook --width=320,1280 --debug"`
+```json
+  "snapshot": "build-storybook && percy-storybook --width=320,1280 --debug"
+```
 
 Run `npm run snapshot` again, and email the output to [hello@percy.io](mailto:hello@percy.io).
 
