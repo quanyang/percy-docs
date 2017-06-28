@@ -4,7 +4,7 @@
 [![Package Status](https://img.shields.io/npm/v/@percy-io/react-percy-storybook.svg)](https://www.npmjs.com/package/@percy-io/react-percy-storybook)
 [![Build Status](https://travis-ci.org/percy/react-percy.svg?branch=master)](https://travis-ci.org/percy/react-percy)
 
-This adds [Percy](https://percy.io) visual testing and review to your [**React Storybook**](https://storybook.js.org/).  If you use React without Storybook see our [React](/docs/clients/javascript/react) page.
+This adds [Percy](https://percy.io) visual testing and review to your [**Storybook for React**](https://storybook.js.org/).  If you use React without Storybook see our [React](/docs/clients/javascript/react) page.
 
 ## Installation
 
